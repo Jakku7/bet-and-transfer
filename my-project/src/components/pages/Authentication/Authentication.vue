@@ -59,7 +59,7 @@
     </v-snackbar>
   </div>
 </template>
-<script>
+ <script>
   import Authentication from '@/components/pages/Authentication'
   export default {
     data () {
@@ -92,7 +92,7 @@
       }
     }
   }
-</script>
+</script> */}
 <style lang="scss">
   @import "./../../../assets/styles";
 .l-auth {
