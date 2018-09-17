@@ -6,6 +6,9 @@
   </div>
 </template>
 <style>
+* {
+  font-family: 'Lato', sans-serif;
+}
 .myContainer {
   width: 100%;
 }

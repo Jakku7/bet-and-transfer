@@ -6,11 +6,33 @@
     <v-content>
       <section>
         <v-parallax :src="require('./../../../assets/storia.jpg')" height="900">
+          <div class="greetingsContainer"> 
+            <img :src="require('./../../../assets/logo.png')" class="logotype" />
+            <h1 id="greeting">{{ greetings }}</h1>
+          </div>
         </v-parallax>
       </section>
       <section class="test">
+        <my-slider class="slider" />
       </section>
       <section class="test2">
+        <div class="storyContainer"><h2 class="story">{{ story }}</h2></div>
+      </section>
+      <section class="test3">
+          <v-parallax :src="require('./../../../assets/storia2.jpg')" height="500">
+            <v-layout column align-center justify-center>
+            <div class="test5">Lorem Ipsum something Lorem Ipsum something</div>
+            <em>Lorem Ipsum something Lorem Ipsum something</em>
+            <v-btn
+              class="blue lighten-2 mt-5"
+              dark
+              large
+              href="/pre-made-themes"
+            >
+              Lorem Ipsum something
+            </v-btn>
+          </v-layout>
+        </v-parallax>
       </section>
       <section>
         <v-layout
@@ -180,11 +202,29 @@
 .test {
     background: #ffffff;
     background-color: #ffffff;
-    height: 600px;
 } 
 .test2 {
-    height: 600px;
+    background:#fcfcfc;
+    background-color: #fcfcfc;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+}
+.test3 {
     background: #1f1a17;
+    color:#ffffff;
+}
+.test5 {
+    text-align: center;
+    font-size: 48px !important;
+    max-width: 800px;
+    line-height: 1.2 !important;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 900;
 }
 .link a {
     color: white !important;
@@ -192,9 +232,80 @@
     text-decoration: none;
     font-size:14px;
 }
+.greetingsContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
+  bottom:80px;
+}
+#greeting {
+    text-align: center;
+    font-size: 48px;
+    max-width: 800px;
+    line-height: 1.2;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.logotype {
+  width:90px;
+  justify-content: center;
+  align-content: center;
+  display: block;
+}
+.v-parallax {
+  align-items: center;
+  align-content: center;
+}
+.slider {
+  height: 700px !important;
+  box-shadow: none !important;
+}
+.storyContainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.story {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 20px;
+  max-width: 50%;
+  text-align: center;
+}
 </style>
 <script>
-  export default {
-      name: 'Home',
-  }
+import slider from './homeComponents/slider.vue';
+export default {
+    name: 'Home',
+    components: {
+      'my-slider': slider
+    },
+    data () {
+      return {
+        greetings: 'Bet and transfer on transfer market',
+        story: 'He did that again. He scores like he did that every week in the past. Some people said that he is burned out already but once again he proved they are wrong. And he was right. Unfortunately he decided to move to another club. But, is that true? '
+      }
+    }
+}
+
+
+/* Not used now
+function printLetterByLetter(destination, message, speed){
+    var i = 0;
+    var interval = setInterval(function(){
+        document.getElementById(destination).innerHTML += message.charAt(i);
+        i++;
+        if (i > message.length){
+            clearInterval(interval);
+        }
+    }, speed);
+}
+
+printLetterByLetter("notusedyet", "BET AND TRANSFER ON TRANSFER MARKET", 200);*/
 </script>
