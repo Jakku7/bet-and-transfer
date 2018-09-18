@@ -12,6 +12,7 @@
           </div>
         </v-parallax>
       </section>
+
       <section class="test">
         <my-slider class="slider" />
       </section>
@@ -216,6 +217,9 @@
 .test3 {
     background: #1f1a17;
     color:#ffffff;
+}
+.test4 {
+  height: 100px;
 }
 .test5 {
     text-align: center;
