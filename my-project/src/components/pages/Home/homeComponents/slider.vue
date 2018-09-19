@@ -3,7 +3,7 @@
     <v-carousel-item
       v-for="(item,i) in items"
       :key="i"
-      :src="item.src"
+      :src="require('../../../../assets/sketch2-1.jpg')"
     ></v-carousel-item>
   </v-carousel>
 </template>

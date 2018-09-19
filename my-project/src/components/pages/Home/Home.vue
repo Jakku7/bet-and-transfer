@@ -4,18 +4,29 @@
       <v-toolbar-title class="link"><router-link to="/login">Login</router-link></v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <section>
-        <v-parallax :src="require('./../../../assets/storia.jpg')" height="900">
+    <!--Removed
+         <section>
+        <v-parallax :src="require('./../../../assets/night-small.jpg')" height="900">
           <div class="greetingsContainer"> 
             <img :src="require('./../../../assets/logo.png')" class="logotype" />
             <h1 id="greeting">{{ greetings }}</h1>
           </div>
         </v-parallax>
       </section>
-
       <section class="test">
         <my-slider class="slider" />
       </section>
+         -->
+         <section style="position: relative">
+           <img :src="require('./../../../assets/nightpart.jpg')" width="100%" />
+           <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0">
+              <div style="display: flex; width: 100%; height: 100%; justify-content: center; align-items: center;"><h1 id="greeting">{{ greetings }}</h1></div>
+           </div>
+          </section>
+          <section style="position: relative;">
+           <img :src="require('./../../../assets/daypart.jpg')" width="100%" />
+           <div id="ball"></div>
+          </section>
       <section class="test2">
         <div class="storyContainer"><h2 class="story">{{ story }}</h2></div>
       </section>
@@ -192,6 +203,122 @@
   </v-app>
 </template>
 <style>
+#ball {
+    position: absolute;
+
+    height: 100px;
+    width: 100px;
+    left: 49%;
+    background-size: 75% 75%;
+    top: 75%;
+  background-image: url('./../../../assets/ball.png');
+  cursor: pointer;
+    transition: .5s ease-in-out;
+    background-position: center;
+}
+#ball:hover {
+  background-image: url('./../../../assets/ball2.png');
+    transition: .5s ease-in-out;
+    animation: bump 2s linear 2;
+  -webkit-animation: bump 2s linear 2;
+  
+}
+@keyframes bump {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+
+  }
+  50% {
+
+  }
+  75% {
+
+  }
+  100% {
+  transform: rotate(-360deg);
+  }
+}
+@keyframes rotate-btn {
+  0% {
+    transform: rotate(0);
+    top:74%;
+  }
+  5% {
+    top:73%;
+  }
+  10% {
+    top:72%;
+  }
+  20% {
+    top:71%;
+  }
+  30% {
+    top:70%;
+  }
+  40% {
+    top: 65%;
+    left: 50%;
+        background-size: 70% 70%;
+  }
+  50% {
+    top: 60%;
+    left: 51%;
+            background-size: 65% 65%;
+  }
+  52% {
+    top: 54%;
+    left: 52%;
+            background-size: 60% 60%;
+  }
+  54% {
+    top: 48%;
+    left: 53%;
+            background-size: 55% 55%;
+  }
+  56% {
+    top: 40%;
+    left: 54%;
+            background-size: 50% 50%;
+  }
+  58% {
+    top: 33%;
+     left: 55%;
+             background-size: 45% 45%;
+  }
+  60% {
+    top:  33%;
+     left: 55%;
+             background-size: 40% 40%;
+                     transform: rotate(-360deg);
+  }
+  65% {
+    top:  33%;
+     left: 55%;
+             background-size: 40% 40%;
+  }
+    70% {
+    top:  33%;
+     left: 55%;
+             background-size: 40% 40%;
+  }
+    80% {
+    top:  33%;
+     left: 55%;
+             background-size: 40% 40%;
+  }
+    90% {
+    top:  33%;
+     left: 55%;
+             background-size: 40% 40%;
+  }
+    100% {
+    top:  33%;
+     left: 55%;
+             background-size: 40% 40%;
+  }
+}
 .nav {
     background: #1f1a17 !important;
     background-color: #1f1a17;
@@ -254,6 +381,7 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 900;
+    color: #ffffff;
 }
 .logotype {
   width:90px;
@@ -266,7 +394,7 @@
   align-content: center;
 }
 .slider {
-  height: 700px !important;
+  height: 850px !important;
   box-shadow: none !important;
 }
 .storyContainer {
